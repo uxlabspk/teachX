@@ -1,12 +1,22 @@
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Landing from "./pages/Landing";
 
 function App() {
-
   return (
-    <>
-      <h1 className="bg-green-900">he;;p worlz</h1>
-    </>
-  )
+    <Router>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<Landing />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
