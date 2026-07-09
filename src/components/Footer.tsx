@@ -2,28 +2,28 @@ import { Link } from "react-router-dom";
 
 const footerLinks = {
   Product: [
-    { name: "Features", href: "#features" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Integrations", href: "#" },
-    { name: "API", href: "#" },
+    { name: "Features", to: "/features" },
+    { name: "Pricing", to: "/pricing" },
+    { name: "Integrations", to: "#" },
+    { name: "API", to: "#" },
   ],
   Company: [
-    { name: "About", href: "#" },
-    { name: "Blog", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "About", to: "#" },
+    { name: "Blog", to: "#" },
+    { name: "Careers", to: "#" },
+    { name: "Contact", to: "#" },
   ],
   Resources: [
-    { name: "Documentation", href: "#" },
-    { name: "Help center", href: "#" },
-    { name: "Community", href: "#" },
-    { name: "Webinars", href: "#" },
+    { name: "Documentation", to: "#" },
+    { name: "Help center", to: "#" },
+    { name: "Community", to: "#" },
+    { name: "Testimonials", to: "/testimonials" },
   ],
   Legal: [
-    { name: "Privacy", href: "#" },
-    { name: "Terms", href: "#" },
-    { name: "Security", href: "#" },
-    { name: "Cookies", href: "#" },
+    { name: "Privacy", to: "#" },
+    { name: "Terms", to: "#" },
+    { name: "Security", to: "#" },
+    { name: "Cookies", to: "#" },
   ],
 };
 
@@ -62,12 +62,21 @@ const Footer = () => {
               <ul className="space-y-2">
                 {links.map((link) => (
                   <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-gray-500 hover:text-black transition-colors"
-                    >
-                      {link.name}
-                    </a>
+                    {link.to === "#" ? (
+                      <a
+                        href={link.to}
+                        className="text-sm text-gray-500 hover:text-black transition-colors"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link
+                        to={link.to}
+                        className="text-sm text-gray-500 hover:text-black transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

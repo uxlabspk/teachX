@@ -26,24 +26,24 @@ const Navbar = () => {
           </Link>
 
           <div className="hidden md:flex items-center gap-6">
-            <a
-              href="#features"
+            <Link
+              to="/features"
               className="text-sm text-gray-600 hover:text-black transition-colors"
             >
               Features
-            </a>
-            <a
-              href="#testimonials"
+            </Link>
+            <Link
+              to="/testimonials"
               className="text-sm text-gray-600 hover:text-black transition-colors"
             >
               Testimonials
-            </a>
-            <a
-              href="#pricing"
+            </Link>
+            <Link
+              to="/pricing"
               className="text-sm text-gray-600 hover:text-black transition-colors"
             >
               Pricing
-            </a>
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center gap-3">
@@ -79,27 +79,27 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="md:hidden border-t border-gray-200 bg-white">
           <div className="px-4 py-3 space-y-1">
-            <a
-              href="#features"
+            <Link
+              to="/features"
               className="block px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
               onClick={() => setMobileOpen(false)}
             >
               Features
-            </a>
-            <a
-              href="#testimonials"
+            </Link>
+            <Link
+              to="/testimonials"
               className="block px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
               onClick={() => setMobileOpen(false)}
             >
               Testimonials
-            </a>
-            <a
-              href="#pricing"
+            </Link>
+            <Link
+              to="/pricing"
               className="block px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-md"
               onClick={() => setMobileOpen(false)}
             >
               Pricing
-            </a>
+            </Link>
             <div className="pt-2 border-t border-gray-100 space-y-1">
               <Link
                 to="/login"
