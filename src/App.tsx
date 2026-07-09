@@ -11,6 +11,18 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import VerifyEmail from "./pages/VerifyEmail";
 
+// Teacher pages
+import TeacherDashboard from "./pages/teacher/Dashboard";
+import TeacherProfile from "./pages/teacher/Profile";
+import TeacherCourses from "./pages/teacher/Courses";
+import TeacherSchedule from "./pages/teacher/Schedule";
+
+// Student pages
+import StudentDashboard from "./pages/student/Dashboard";
+import ExploreCourses from "./pages/student/Explore";
+import MyCourses from "./pages/student/MyCourses";
+import StudentProfile from "./pages/student/Profile";
+
 function App() {
   return (
     <Router>
@@ -73,6 +85,18 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
+
+        {/* Teacher dashboard - no nav/footer */}
+        <Route path="/teacher" element={<TeacherDashboard />} />
+        <Route path="/teacher/profile" element={<TeacherProfile />} />
+        <Route path="/teacher/courses" element={<TeacherCourses />} />
+        <Route path="/teacher/schedule" element={<TeacherSchedule />} />
+
+        {/* Student dashboard - no nav/footer */}
+        <Route path="/student" element={<StudentDashboard />} />
+        <Route path="/student/explore" element={<ExploreCourses />} />
+        <Route path="/student/my-courses" element={<MyCourses />} />
+        <Route path="/student/profile" element={<StudentProfile />} />
       </Routes>
     </Router>
   );
